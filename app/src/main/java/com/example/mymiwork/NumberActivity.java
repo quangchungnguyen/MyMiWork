@@ -23,16 +23,16 @@ public class NumberActivity extends AppCompatActivity {
 
         // Create a list of words
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("one", "một", R.drawable.number_one));
-        words.add(new Word("two", "hai", R.drawable.number_two));
-        words.add(new Word("three", "ba", R.drawable.number_three));
-        words.add(new Word("four", "bốn", R.drawable.number_four));
-        words.add(new Word("five", "năm", R.drawable.number_five));
-        words.add(new Word("six", "sáu", R.drawable.number_six));
-        words.add(new Word("seven", "bảy", R.drawable.number_seven));
-        words.add(new Word("eight", "tám", R.drawable.number_eight));
-        words.add(new Word("nine", "chín", R.drawable.number_nine));
-        words.add(new Word("ten", "mười", R.drawable.number_ten));
+        words.add(new Word("one", "một", R.drawable.number_one, R.raw.number_one));
+        words.add(new Word("two", "hai", R.drawable.number_two, R.raw.number_two));
+        words.add(new Word("three", "ba", R.drawable.number_three,R.raw.number_three));
+        words.add(new Word("four", "bốn", R.drawable.number_four,R.raw.number_four));
+        words.add(new Word("five", "năm", R.drawable.number_five,R.raw.number_five));
+        words.add(new Word("six", "sáu", R.drawable.number_six,R.raw.number_six));
+        words.add(new Word("seven", "bảy", R.drawable.number_seven,R.raw.number_seven));
+        words.add(new Word("eight", "tám", R.drawable.number_eight,R.raw.number_eight));
+        words.add(new Word("nine", "chín", R.drawable.number_nine,R.raw.number_nine));
+        words.add(new Word("ten", "mười", R.drawable.number_ten,R.raw.number_ten));
 
         //ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this, R.layout.list_item, words);
 
@@ -52,11 +52,13 @@ public class NumberActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.v("numberactivity","test 1");
-              //  Toast.makeText(NumberActivity.this,"List item clicked", Toast.LENGTH_SHORT).show();
-                //mMediaPlayer = MediaPlayer.create(NumberActivity.this, R.raw.number_one);
-               // mMediaPlayer.start();
+            public void onItemClick(AdapterView<?> adapterView, View view, int position , long l) {
+                //Log.v("numberactivity","test 1");
+                Toast.makeText(NumberActivity.this,"List item clicked", Toast.LENGTH_SHORT).show();
+                Word word = words.get(position);
+               // mMediaPlayer.setVolume(volume1,volume1);
+                mMediaPlayer = MediaPlayer.create(NumberActivity.this, word.getmSoundResourceID());
+                mMediaPlayer.start();
             }
         });
     }
