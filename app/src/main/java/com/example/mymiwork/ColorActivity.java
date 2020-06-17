@@ -22,7 +22,7 @@ private  MediaPlayer mMediaPlayer;
         // Create a list of words
         final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("red", "đỏ", R.drawable.color_red,R.raw.color_red));
-        words.add(new Word("green", "xanh lá", R.drawable.color_green,R.raw.color_brown));
+        words.add(new Word("green", "xanh lá", R.drawable.color_green,R.raw.color_green));
         words.add(new Word("brown", "nâu",R.drawable.color_brown,R.raw.color_brown));
         words.add(new Word("grey", "xám",R.drawable.color_gray,R.raw.color_gray));
         words.add(new Word("black", "đen",R.drawable.color_black,R.raw.color_black));
